@@ -1,0 +1,39 @@
+﻿<Window x:Class="ServicesKiller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServicesKiller"
+        mc:Ignorable="d"
+        Title="ServicesKiller" Height="580.727" Width="927.999" Icon="icon.ico">
+    <Grid Background="#FF323232">
+        <ListBox x:Name="servicesListBox" Height="393" Margin="458,47,31,0" VerticalAlignment="Top">
+            <ListBox.ItemTemplate >
+                <DataTemplate >
+                    <TextBlock Grid.Column="1" Text="{Binding DisplayName}" Background="{Binding Color}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <DataGrid x:Name="processesTable" Margin="30,47,0,0" VerticalAlignment="Top" Height="393" Background="White" HeadersVisibility="Column" HorizontalAlignment="Left" Width="428"/>
+        <Button x:Name="killButton" Content="Завершить процессы" HorizontalAlignment="Left" Margin="124,0,0,27" Width="257" Height="53" VerticalAlignment="Bottom" FontSize="16" IsCancel="True" Click="killButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFEAEAEA" Offset="0.5"/>
+                    <GradientStop Color="#FFECECEC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="serviceButton" Content="Остановить / запустить" HorizontalAlignment="Left" Margin="544,0,0,27" Width="257" Height="53" VerticalAlignment="Bottom" FontSize="16" Click="serviceButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFEEECEC" Offset="0.5"/>
+                    <GradientStop Color="WhiteSmoke" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
